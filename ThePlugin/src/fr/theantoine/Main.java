@@ -27,7 +27,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.mysql.jdbc.ResultSetMetaData;
 
 public class Main extends JavaPlugin implements Listener{
-
+//thrrybo
    
    
     private String url = "jdbc:mysql://localhost:3306/site";
