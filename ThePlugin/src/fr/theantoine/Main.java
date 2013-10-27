@@ -71,7 +71,7 @@ public class Main extends JavaPlugin implements Listener{
         }
        
     }
-   
+/*   
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event){
        
@@ -180,18 +180,30 @@ public class Main extends JavaPlugin implements Listener{
       
    }
     }
-  
+  */
     
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
 	  {
 	    Player player = (Player)sender;
 	    
 	    
-	    if (label.equalsIgnoreCase("stats"))
+	    
+	    if (label.equalsIgnoreCase("recuperer"))
 	    {
 	    	
 	    	
-	player.sendMessage(ChatColor.GOLD + "[Stats] " + ChatColor.YELLOW + "Vous pouvez consulter les statistiques de votre joueur sur notre site Internet.");
+	    	
+           // HEEEELPPP!!!! :) J'ai mes variables qui fonctionnent pas, et j'ai passé la soirée et ce matin à chercher, j'abandonne ^^
+	    	// Je comptais rajouter les colonnes "items" et "quantite" dans la table "log_achats", et une colonne "en_attente" pour savoir si la commande a deja été traitée ou pas
+	    	// ça va te prendre 5 minutes, alors que moi, j'ai aps encore toutes les connaissances requises et ça va me prendre 1 journée ^^
+                
+          
+       }
+	    	
+	    	
+	    	
+	    	
+	player.sendMessage(ChatColor.GOLD + "[Achat] " + ChatColor.YELLOW + "Vous avez reçu votre commande, merci pour votre achat.");
 	    }
 
 	    return true;
