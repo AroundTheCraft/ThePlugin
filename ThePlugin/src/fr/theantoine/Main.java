@@ -65,7 +65,7 @@ public class Main extends JavaPlugin implements Listener{
        
         try {
              conn = DriverManager.getConnection(url, user, passwd);
-             System.out.println("Connexion établie!");
+             System.out.println("Connexion ï¿½tablie!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -140,10 +140,19 @@ public class Main extends JavaPlugin implements Listener{
                  try{
                      Statement state1 = conn.createStatement();
                      ResultSet result = state1.executeQuery("SELECT * FROM monnaie WHERE pseudo ='"+ pname +"'");
-                     ResultSetMetaData resultMeta = (ResultSetMetaData) result.getMetaData();
-                     result.next();
-                     event.getPlayer().sendMessage(ChatColor.GOLD + "[Monnaie] " + ChatColor.YELLOW + "Vous avez "+result.getString("monnaie")+" PO.");
+                    
+                     if(result.next())
+                     {
+                     //tu fais ce que tu as Ã  faire
                      state1.close();
+                     }
+                     else
+                     {
+                     //tu insere un nouvel enregistrement.
+                     state1.close();
+                     }
+                     event.getPlayer().sendMessage(ChatColor.GOLD + "[Monnaie] " + ChatColor.YELLOW + "Vous avez "+result.getString("monnaie")+" PO.");
+                     
                      }catch(SQLException e2){
                          e2.printStackTrace();
                      
@@ -193,9 +202,9 @@ public class Main extends JavaPlugin implements Listener{
 	    	
 	    	
 	    	
-           // HEEEELPPP!!!! :) J'ai mes variables qui fonctionnent pas, et j'ai passé la soirée et ce matin à chercher, j'abandonne ^^
-	    	// Je comptais rajouter les colonnes "items" et "quantite" dans la table "log_achats", et une colonne "en_attente" pour savoir si la commande a deja été traitée ou pas
-	    	// ça va te prendre 5 minutes, alors que moi, j'ai aps encore toutes les connaissances requises et ça va me prendre 1 journée ^^
+           // HEEEELPPP!!!! :) J'ai mes variables qui fonctionnent pas, et j'ai passï¿½ la soirï¿½e et ce matin ï¿½ chercher, j'abandonne ^^
+	    	// Je comptais rajouter les colonnes "items" et "quantite" dans la table "log_achats", et une colonne "en_attente" pour savoir si la commande a deja ï¿½tï¿½ traitï¿½e ou pas
+	    	// ï¿½a va te prendre 5 minutes, alors que moi, j'ai aps encore toutes les connaissances requises et ï¿½a va me prendre 1 journï¿½e ^^
                 
           
        }
@@ -203,7 +212,7 @@ public class Main extends JavaPlugin implements Listener{
 	    	
 	    	
 	    	
-	player.sendMessage(ChatColor.GOLD + "[Achat] " + ChatColor.YELLOW + "Vous avez reçu votre commande, merci pour votre achat.");
+	player.sendMessage(ChatColor.GOLD + "[Achat] " + ChatColor.YELLOW + "Vous avez reï¿½u votre commande, merci pour votre achat.");
 	    }
 
 	    return true;
