@@ -140,7 +140,8 @@ public class Main extends JavaPlugin implements Listener{
                  try{
                      Statement state1 = conn.createStatement();
                      ResultSet result = state1.executeQuery("SELECT * FROM monnaie WHERE pseudo ='"+ pname +"'");
-                    
+                    **ResultSet result = state1.executeQuery("SELECT count (*) as nombre FROM monnaie WHERE pseudo ='"+ pname +"'");
+                     **if(result.getInt("nombre"))>0
                      if(result.next())
                      {
                      //tu fais ce que tu as à faire
