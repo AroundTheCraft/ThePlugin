@@ -1,0 +1,8 @@
+name: Achievements
+main: fr.aroundthecraft.Achievements
+version: 1.0
+author: TheAntoine/Yousoufos
+commands:
+   succes:
+      usage: /<command>
+      description: Vos achievements

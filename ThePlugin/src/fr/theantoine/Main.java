@@ -51,7 +51,7 @@ public class Main extends JavaPlugin implements Listener{
         this.getServer().getPluginManager().registerEvents(this, this);
        
     }
-    public void onDiable(){
+    public void onDisable(){
        
     }
    
@@ -201,7 +201,31 @@ public class Main extends JavaPlugin implements Listener{
 	    if (label.equalsIgnoreCase("recuperer"))
 	    {
 	    	
-	    	
+	     	 pname = sender.getName();
+        	 
+	         
+             try{
+                 Statement state1 = conn.createStatement();
+                 ResultSet result = state1.executeQuery("SELECT * FROM monnaie WHERE pseudo ='"+ pname +"'");
+                
+                 if(result.next())
+                 {
+                 //tu fais ce que tu as à faire
+                 state1.close();
+                 }
+                 else
+                 {
+                 //tu insere un nouvel enregistrement.
+                 state1.close();
+                 }
+                 event.getPlayer().sendMessage(ChatColor.GOLD + "[Monnaie] " + ChatColor.YELLOW + "Vous avez "+result.getString("monnaie")+" PO.");
+                 
+                 }catch(SQLException e2){
+                     e2.printStackTrace();
+                 
+           
+        }
+        	
 	    	
            // HEEEELPPP!!!! :) J'ai mes variables qui fonctionnent pas, et j'ai pass� la soir�e et ce matin � chercher, j'abandonne ^^
 	    	// Je comptais rajouter les colonnes "items" et "quantite" dans la table "log_achats", et une colonne "en_attente" pour savoir si la commande a deja �t� trait�e ou pas
